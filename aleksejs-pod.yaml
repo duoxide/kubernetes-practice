@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: aleksejs-test
+  name: aleksejs-test-manifest
+spec:
+  containers:
+  - image: nginx
+    name: aleksejs-test-frommanifest
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

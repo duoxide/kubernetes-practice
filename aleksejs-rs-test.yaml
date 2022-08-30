@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: aleksejs-rs
+  labels:
+    app: aleksejs-rs
+spec:
+  template:
+    metadata:
+      name: aleksejs-nginx-pod
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: aleksejs-rs-container
+          image: nginx
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
