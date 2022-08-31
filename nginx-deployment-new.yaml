@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aleksejs-deploy
+  labels:
+    genre: jazz
+spec:
+  template:
+    metadata:
+      name: aleksejs-deploy-pod
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: aleksejs-nginx
+          image: nginx
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
